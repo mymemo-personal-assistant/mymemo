@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MyMemo</string>
+    <string name="enter_class_name">Enter your class name</string>
+    <string name="timings">Timings :</string>
+    <string name="class_name">Class :</string>
+    <string name="next">Next</string>
+    <string name="enter_description">Enter Description</string>
+
+    <string-array name="days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
 </resources>
