@@ -5,6 +5,15 @@
     <string name="class_name">Class :</string>
     <string name="next">Next</string>
     <string name="enter_description">Enter Description</string>
+    <string name="study_class">Study Class</string>
+    <string name="credits">Enter Credits</string>
+    <string name="enter_valid_string">Please enter a valid</string>
+    <string name="select_day">Select Day</string>
+    <string name="set_start_time">Start Time</string>
+    <string name="set_end_time">End Time</string>
+    <string name="done">Done</string>
+    <string name="check_values">Please check the values you have entered.</string>
+    <string name="please_try_again">Please try again.</string>
 
     <string-array name="days">
         <item>Monday</item>

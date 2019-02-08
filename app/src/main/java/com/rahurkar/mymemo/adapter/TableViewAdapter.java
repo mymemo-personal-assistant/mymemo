@@ -1,4 +1,4 @@
-package com.rahurkar.mymemo;
+package com.rahurkar.mymemo.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.evrencoskun.tableview.adapter.AbstractTableAdapter;
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
+import com.rahurkar.mymemo.R;
+import com.rahurkar.mymemo.pojo.Cell;
 
 
 public class TableViewAdapter extends AbstractTableAdapter<String, String, Cell> {

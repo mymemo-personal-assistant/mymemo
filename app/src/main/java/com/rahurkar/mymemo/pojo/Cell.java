@@ -1,6 +1,6 @@
-package com.rahurkar.mymemo;
+package com.rahurkar.mymemo.pojo;
 
-class Cell {
+public class Cell {
     String data;
 
     public String getData() {

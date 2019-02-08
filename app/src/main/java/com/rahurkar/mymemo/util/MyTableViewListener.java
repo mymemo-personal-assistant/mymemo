@@ -1,4 +1,4 @@
-package com.rahurkar.mymemo;
+package com.rahurkar.mymemo.util;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

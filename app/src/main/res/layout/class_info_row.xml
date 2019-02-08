@@ -8,37 +8,72 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/class_name" />-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/type_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/study_class" />
+
+            <EditText
+                android:id="@+id/credit_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:hint="@string/credits" />
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
                 <EditText
                     android:id="@+id/class_name_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="@string/enter_description"
                     android:maxLines="2"
-                    android:scrollHorizontally="true"
 
-                    android:hint="@string/enter_description" />
+                    android:scrollHorizontally="true" />
 
-                <TextView
-                    android:id="@+id/class_name_text_view"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:layout_centerHorizontal="true"
-                    android:visibility="gone" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/class_name_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:textSize="24sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/credit_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
 
 
             </RelativeLayout>
@@ -47,9 +82,9 @@
                 android:id="@+id/done_image_view"
                 android:layout_width="0dp"
                 android:layout_height="32dp"
-                android:layout_weight="1"
-                android:layout_marginRight="24dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1"
                 android:src="@drawable/ic_check_black_24dp" />
         </LinearLayout>
     </LinearLayout>
@@ -63,25 +98,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:text="@string/timings"
             android:gravity="center_vertical"
+            android:text="@string/timings"
             android:textSize="16sp" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/timings_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:gravity="center_vertical"
-            app:reverseLayout="true" />
+        <ImageView
+            android:id="@+id/add_time_image"
+            android:src="@drawable/ic_add_circle_outline_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/timings_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
 
 
     <View
-        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="16dp"
         android:background="@android:color/darker_gray" />
 
 </LinearLayout>

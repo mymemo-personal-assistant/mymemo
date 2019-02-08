@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.evrencoskun.tableview.TableView;
+import com.rahurkar.mymemo.adapter.TableViewAdapter;
+import com.rahurkar.mymemo.pojo.ActivityModel;
+import com.rahurkar.mymemo.pojo.Cell;
+import com.rahurkar.mymemo.util.MyTableViewListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,12 +22,14 @@ public class TableActivity extends AppCompatActivity {
     private List<List<Cell>> mCellList;
     TableView mTableView;
     TableViewAdapter mAdapter;
-
+    ArrayList<ActivityModel> mActivityModelsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table);
+        mActivityModelsList = this.getIntent().getParcelableArrayListExtra(MainActivity. MODEL_LIST);
+        Log.d(TAG, "onCreate: Models : " + mActivityModelsList);
         mTableView = findViewById(R.id.content_container);
 
         mColumnHeaderList = Arrays.asList(getResources().getStringArray(R.array.days));
@@ -40,6 +46,8 @@ public class TableActivity extends AppCompatActivity {
 
     }
 
+
+    //TODO Prachi Initialize your cells here using the mActivityModelsList
     private List<List<Cell>> initializeCells(List<List<Cell>> mCellList) {
         mCellList = new ArrayList<>();
         for(int i = 0; i < 17; i ++) {
