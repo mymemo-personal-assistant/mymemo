@@ -14,7 +14,8 @@ public class ActivityModel implements Parcelable {
     List<TimeModel> timeModelList;
     boolean isComplete;
 
-    public ActivityModel() {
+    public ActivityModel()
+    {
         isStudyClass = true;
         isComplete = false;
     }
