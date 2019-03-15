@@ -14,6 +14,9 @@
     <string name="done">Done</string>
     <string name="check_values">Please check the values you have entered.</string>
     <string name="please_try_again">Please try again.</string>
+    <string name="change_in_model">Some entries have been modified due to empty fields</string>
+    <string name="add_valid_data">Please add valid data</string>
+    <string name="please_enter_valid_day">Please enter a valid day</string>
 
     <string-array name="days">
         <item>Monday</item>

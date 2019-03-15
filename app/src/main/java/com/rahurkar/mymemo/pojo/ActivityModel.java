@@ -6,7 +6,8 @@ import android.os.Parcelable;
 
 import java.util.List;
 
-public class ActivityModel implements Parcelable {
+public class ActivityModel implements Parcelable
+{
     private static final String TAG = ActivityModel.class.getSimpleName();
     boolean isStudyClass;
     String name;
@@ -30,7 +31,8 @@ public class ActivityModel implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
+    public void writeToParcel(Parcel dest, int flags)
+    {
         dest.writeByte((byte) (isStudyClass ? 1 : 0));
         dest.writeString(name);
         dest.writeInt(credits);

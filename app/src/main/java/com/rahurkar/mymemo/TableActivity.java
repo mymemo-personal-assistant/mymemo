@@ -35,7 +35,8 @@ public class TableActivity extends AppCompatActivity {
     boolean mIsTable1Selected = true;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table);
         mActivityModelsList = this.getIntent().getParcelableArrayListExtra(MainActivity.MODEL_LIST);
@@ -79,7 +80,8 @@ public class TableActivity extends AppCompatActivity {
             return true;
         }
 
-        if (item.getItemId() == R.id.time2) {
+        if (item.getItemId() == R.id.time2)
+        {
             Log.d(TAG, "onOptionsItemSelected: 2");
             mIsTable1Selected = false;
             mAdapter.setAllItems(mColumnHeaderList, mRowHeaderList, mCellList_2);
@@ -90,16 +92,15 @@ public class TableActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private List<List<Cell>> generateCells(List<List<Cell>> mCellList, int studyHoursPerDay) {
+    private List<List<Cell>> generateCells(List<List<Cell>> mCellList, int studyHoursPerDay)
+    {
         mCellList = initializeCells();
         setActivities(mCellList);
         setGeneralRoutine(mCellList);
 
-        for (int k = 0; k < mActivityModelsList.size(); k++) {
+        for (int k = 0 ; k < mActivityModelsList.size(); k++)
+        {
             ActivityModel activityModel = mActivityModelsList.get(k);
-            if (!activityModel.isStudyClass()) {
-                continue;
-            }
             setSubjectsWithCredits(mCellList, activityModel, studyHoursPerDay);
         }
 
@@ -108,8 +109,15 @@ public class TableActivity extends AppCompatActivity {
         return mCellList;
     }
 
-    private void setSubjectsWithCredits(List<List<Cell>> mCellList, ActivityModel activityModel, int studyHoursPerDay) {
-        int credits = activityModel.getCredits();
+    private void setSubjectsWithCredits(List<List<Cell>> mCellList, ActivityModel activityModel, int studyHoursPerDay)
+    {
+        int credits;
+        if(activityModel.getCredits() >0)
+        {   credits = activityModel.getCredits();  }
+        else
+            {
+                credits = 4;
+            }
         int totalStudyTIme = credits * STUDY_HOUR_PER_CREDIT;
         int count_per_day = 0;
         int total_count = 0;
@@ -117,7 +125,7 @@ public class TableActivity extends AppCompatActivity {
             for (int i = 0; i < 17; i++) {
                 Cell cell = mCellList.get(i).get(j);
                 if (TextUtils.isEmpty(cell.getData())) {
-                    cell.setData(activityModel.getName() + "-Study");
+                    cell.setData(activityModel.getName() + "-_Study");
                     count_per_day++;
                     total_count++;
                     if (count_per_day > studyHoursPerDay - 1) {
@@ -172,11 +180,11 @@ public class TableActivity extends AppCompatActivity {
     {
         for (int k = 0; k < 7; k++)
         {
-            mCellList.get(0).get(k).setData("GetReady,Cook");
-            mCellList.get(15).get(k).setData("Cook-food");
+            mCellList.get(0).get(k).setData("Get_Ready&_Cook");
+            mCellList.get(15).get(k).setData("Cook_food");
             mCellList.get(16).get(k).setData("Sleep");
-            mCellList.get(5).get(k).setData("LunchTime");
-            mCellList.get(13).get(k).setData("DinnerTime");
+            mCellList.get(5).get(k).setData("Lunch_Time");
+            mCellList.get(13).get(k).setData("Dinner_Time");
 
         }
     }

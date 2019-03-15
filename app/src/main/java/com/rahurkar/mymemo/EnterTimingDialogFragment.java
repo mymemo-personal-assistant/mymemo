@@ -121,7 +121,8 @@ public class EnterTimingDialogFragment extends AppCompatDialogFragment implement
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mSelected.length > 0 && startTimeButton.getText().toString().contains(":") && endTimeButton.getText().toString().contains(":")) {
+                if (mSelected != null && mSelected.length > 0 && startTimeButton.getText().toString().contains(":") && endTimeButton.getText().toString().contains(":")) {
+                    boolean hasValidDay = false;
                     List<TimeModel> timeModelList = new ArrayList<>();
                     for (int i = 0; i < mSelected.length; i ++) {
                         if (mSelected[i]) {
@@ -129,7 +130,12 @@ public class EnterTimingDialogFragment extends AppCompatDialogFragment implement
                             timeModel.setValueFromObject(mTimeModel);
                             timeModel.setDayOfWeek(i);
                             timeModelList.add(timeModel);
+                            hasValidDay = true;
                         }
+                    }
+                    if (!hasValidDay) {
+                        Toast.makeText(EnterTimingDialogFragment.this.getContext(), R.string.please_enter_valid_day, Toast.LENGTH_LONG).show();
+                        return;
                     }
 
                     if (mOnDialogComplete == null) {
